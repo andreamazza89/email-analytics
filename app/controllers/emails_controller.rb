@@ -5,6 +5,7 @@ class EmailsController < ApplicationController
   def create
     puts('==========================')
     jison = JSON.parse(request.body.read)
+    Email.create(address: jison['Address'], email_type: jison['EmailType'], event: jison['Event'], timestamp: jison['Timestamp'] )
     puts(jison['Address'])
     puts(jison['EmailType'])
     puts(jison['Event'])
