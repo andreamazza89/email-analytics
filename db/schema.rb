@@ -21,13 +21,4 @@ ActiveRecord::Schema.define(version: 20160817104806) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "emails", force: :cascade do |t|
-    t.string   "address"
-    t.string   "event"
-    t.integer  "timestamp"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "event_type"
-  end
-
 end
