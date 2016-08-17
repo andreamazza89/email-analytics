@@ -1,0 +1,12 @@
+<h1>Analytics#index</h1>
+
+<% @emails.each do |email| %>
+
+  <p>Address:   <%= email.address%></p>
+  <p>Event:     <%= email.event%></p>
+  <p>Type:      <%= email.email_type%></p>
+  <p>TimeStamp: <%= email.timestamp%></p>
+  <br>
+  <br>
+  
+<% end %>
