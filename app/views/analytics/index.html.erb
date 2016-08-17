@@ -2,4 +2,4 @@
 <p>Total number of emails opened is: <%= @analytics.emails_opened %></p>
 <p>Total number of emails clicked is: <%= @analytics.emails_clicked %></p>
 <br>
-<p>Open rate for Shipment emails is 0%</p>
+<p>Open rate for Shipment emails is <%= @analytics.open_rate('Shipment')  %>%</p>
