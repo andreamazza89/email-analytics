@@ -1,4 +1,4 @@
-feature 'Analytics' do
+feature 'Feature - analytics: total emails sent' do
 
   scenario 'Total number of emails sent is shown on analytics page, example 0' do
     visit analytics_path
