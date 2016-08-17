@@ -8,4 +8,8 @@ module FactoryHelpers
     total.times { FactoryGirl.create(:email_event, event: 'open') }
   end
 
+  def create_clicked_email_events(total)
+    total.times { FactoryGirl.create(:email_event, event: 'click') }
+  end
+
 end

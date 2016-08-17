@@ -43,3 +43,26 @@ describe Analytics, '#emails_opened' do
     end
   end
 end
+
+describe Analytics, '#emails_clicked' do
+
+  context 'with zero ~clicked~ email_events' do
+    it 'returns the total number of emails clicked' do
+      expect(subject.emails_clicked).to eq(0)
+    end
+  end
+
+  context 'with one ~clicked~ email_event' do
+    it 'returns the total number of emails clicked' do
+      create_clicked_email_events(1)
+      expect(subject.emails_clicked).to eq(1)
+    end
+  end
+
+  context 'with two ~clicked~ email_events' do
+    it 'returns the total number of emails clicked' do
+      create_clicked_email_events(2)
+      expect(subject.emails_clicked).to eq(2)
+    end
+  end
+end
