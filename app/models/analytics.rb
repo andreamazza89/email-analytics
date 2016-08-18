@@ -1,14 +1,7 @@
 class Analytics
-  def emails_sent
-    EmailEvent.where(event: 'send').count
-  end
 
-  def emails_opened
-    EmailEvent.where(event: 'open').count
-  end
-
-  def emails_clicked
-    EmailEvent.where(event: 'click').count
+  def calculate_total(search_parameters)
+    EmailEvent.where(event: search_parameters[:event]).count
   end
 
   def open_rate(email_type)
