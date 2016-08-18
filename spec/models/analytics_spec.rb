@@ -83,3 +83,20 @@ describe Analytics, '#open_rate' do
     end
   end
 end
+
+describe Analytics, '#click_rate' do
+
+  context 'with no ~clicked~ email_events' do
+    it 'returns 0' do
+      expect(subject.click_rate('Shipment')).to eq(0)
+    end
+  end
+
+  context 'with one ~clicked~ email_event and three ~sent~ email_events' do
+    it 'returns 33' do
+      create_sent_email_events(3)
+      create_clicked_email_events(1)
+      expect(subject.click_rate('Shipment')).to eq(33)
+    end
+  end
+end
