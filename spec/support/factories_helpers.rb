@@ -1,15 +1,12 @@
 module FactoryHelpers
 
-  def create_sent_email_events(total)
-    total.times { FactoryGirl.create(:email_event, event: 'send') }
-  end
-
-  def create_opened_email_events(total)
-    total.times { FactoryGirl.create(:email_event, event: 'open') }
-  end
-
-  def create_clicked_email_events(total)
-    total.times { FactoryGirl.create(:email_event, event: 'click') }
+  def create_email_events(options)
+    quantity = options[:quantity] || 1
+    email_type = options[:email_type] || 'Shipment'
+    event = options[:event] || 'send'
+    quantity.times do 
+      FactoryGirl.create(:email_event, email_type: email_type, event: event)
+    end
   end
 
 end

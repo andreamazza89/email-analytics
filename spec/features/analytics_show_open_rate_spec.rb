@@ -5,8 +5,8 @@ feature 'Feature - analytics: open rate' do
   end
 
   scenario 'Open rate is shown on analytics page, example 1' do
-    create_sent_email_events(3)
-    create_opened_email_events(1)
+    create_email_events(quantity: 3, email_type: 'Shipment', event: 'send')
+    create_email_events(quantity: 1, email_type: 'Shipment', event: 'open')
     visit analytics_path 
     expect(page).to have_content 'Open rate for Shipment emails is 33%'
   end
