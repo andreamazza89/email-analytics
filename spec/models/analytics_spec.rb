@@ -6,13 +6,6 @@ describe Analytics, '#emails_sent' do
     end
   end
 
-  context 'with one ~sent~ email_event' do
-    it 'returns the total number of emails sent' do
-      create_email_events(quantity: 1, event: 'send')
-      expect(subject.emails_sent).to eq(1)
-    end
-  end
-
   context 'with two ~sent~ email_events' do
     it 'returns the total number of emails sent' do
       create_email_events(quantity: 2, event: 'send')
@@ -29,13 +22,6 @@ describe Analytics, '#emails_opened' do
     end
   end
 
-  context 'with one ~opened~ email_event' do
-    it 'returns the total number of emails opened' do
-      create_email_events(quantity: 1, event: 'open')
-      expect(subject.emails_opened).to eq(1)
-    end
-  end
-
   context 'with two ~opened~ email_events' do
     it 'returns the total number of emails opened' do
       create_email_events(quantity: 2, event: 'open')
@@ -49,13 +35,6 @@ describe Analytics, '#emails_clicked' do
   context 'with no ~clicked~ email_events' do
     it 'returns the total number of emails clicked' do
       expect(subject.emails_clicked).to eq(0)
-    end
-  end
-
-  context 'with one ~clicked~ email_event' do
-    it 'returns the total number of emails clicked' do
-      create_email_events(quantity: j, event: 'click')
-      expect(subject.emails_clicked).to eq(1)
     end
   end
 
