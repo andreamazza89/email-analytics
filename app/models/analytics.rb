@@ -4,18 +4,15 @@ class Analytics
     EmailEvent.where(event: search_parameters[:event]).count
   end
 
-  def open_rate(email_type)
-    total_sent_emails   = EmailEvent.where(event: 'send', email_type: email_type).count
-    total_opened_emails = EmailEvent.where(event: 'open', email_type: email_type).count
-    return 0 if [total_opened_emails, total_sent_emails].include?(0)
-    return ((total_opened_emails/total_sent_emails.to_f)*100).round
-  end
+  def calculate_rate(search_parameters)
+    email_type = search_parameters[:email_type]
+    event      = search_parameters[:event]
 
-  def click_rate(email_type)
-    total_sent_emails   = EmailEvent.where(event: 'send', email_type: email_type).count
-    total_clicked_emails = EmailEvent.where(event: 'click', email_type: email_type).count
-    return 0 if [total_clicked_emails, total_sent_emails].include?(0)
-    return ((total_clicked_emails/total_sent_emails.to_f)*100).round
+    total_sent_emails  = EmailEvent.where(event: 'send', email_type: email_type).count
+    total_event_emails = EmailEvent.where(event: event, email_type: email_type).count
+
+    return 0 if [total_event_emails, total_sent_emails].include?(0)
+    return ((total_event_emails/total_sent_emails.to_f)*100).round
   end
 
   def email_types

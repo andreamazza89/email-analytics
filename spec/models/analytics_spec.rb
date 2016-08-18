@@ -1,4 +1,4 @@
-describe Analytics, '#emails_sent' do
+describe Analytics, '#calculate_total' do
 
   context 'with no ~sent~ email_events' do
     it 'returns the total number of emails sent' do
@@ -14,43 +14,11 @@ describe Analytics, '#emails_sent' do
   end
 end
 
-describe Analytics, '#emails_opened' do
-
-  context 'with no ~opened~ email_events' do
-    it 'returns the total number of emails opened' do
-      expect(subject.calculate_total(event: 'open')).to eq(0)
-    end
-  end
-
-  context 'with two ~opened~ email_events' do
-    it 'returns the total number of emails opened' do
-      create_email_events(quantity: 2, event: 'open')
-      expect(subject.calculate_total(event: 'open')).to eq(2)
-    end
-  end
-end
-
-describe Analytics, '#emails_clicked' do
-
-  context 'with no ~clicked~ email_events' do
-    it 'returns the total number of emails clicked' do
-      expect(subject.calculate_total(event: 'click')).to eq(0)
-    end
-  end
-
-  context 'with two ~clicked~ email_events' do
-    it 'returns the total number of emails clicked' do
-      create_email_events(quantity: 2, event: 'click')
-      expect(subject.calculate_total(event: 'click')).to eq(2)
-    end
-  end
-end
-
-describe Analytics, '#open_rate' do
+describe Analytics, '#calculate_rate' do
 
   context 'with no ~opened~ email_events' do
     it 'returns 0' do
-      expect(subject.open_rate('Shipment')).to eq(0)
+      expect(subject.calculate_rate(email_type: 'Shipment', event: 'open')).to eq(0)
     end
   end
 
@@ -58,24 +26,7 @@ describe Analytics, '#open_rate' do
     it 'returns 33' do
       create_email_events(quantity: 3, event: 'send')
       create_email_events(quantity: 1, event: 'open')
-      expect(subject.open_rate('Shipment')).to eq(33)
-    end
-  end
-end
-
-describe Analytics, '#click_rate' do
-
-  context 'with no ~clicked~ email_events' do
-    it 'returns 0' do
-      expect(subject.click_rate('Shipment')).to eq(0)
-    end
-  end
-
-  context 'with one ~clicked~ email_event and three ~sent~ email_events' do
-    it 'returns 33' do
-      create_email_events(quantity: 3, event: 'send')
-      create_email_events(quantity: 1, event: 'click')
-      expect(subject.click_rate('Shipment')).to eq(33)
+      expect(subject.calculate_rate(email_type: 'Shipment', event: 'open')).to eq(33)
     end
   end
 end
