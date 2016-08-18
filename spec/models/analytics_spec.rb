@@ -80,7 +80,7 @@ describe Analytics, '#click_rate' do
   end
 end
 
-xdescribe Analytics, '#email_types' do
+describe Analytics, '#email_types' do
 
   context 'with no email_events' do
     it 'returns an empty array' do
@@ -90,8 +90,14 @@ xdescribe Analytics, '#email_types' do
 
   context 'with a number of email_events' do
     it 'returns an array containing unique email_types' do
-      create_sent_email_events(3)
-      expect(subject.click_rate('Shipment')).to eq(33)
+
+      test_email_types = ['Shipment', 'ReferAFriend', 'UserConfirmation']
+
+      test_email_types.each do |type|
+        create_email_events(quantity: 2, email_type: type)
+      end
+
+      expect(subject.email_types).to eq(test_email_types)
     end
   end
 end

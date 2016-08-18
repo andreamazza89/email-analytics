@@ -24,4 +24,8 @@ class Analytics
     return 0 if [total_clicked_emails, total_sent_emails].include?(0)
     return ((total_clicked_emails/total_sent_emails.to_f)*100).round
   end
+
+  def email_types
+    EmailEvent.distinct.pluck(:email_type) 
+  end
 end
