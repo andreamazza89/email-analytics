@@ -1,9 +1,11 @@
+<h1>Totals</h1>
 <p>Total number of emails sent is: <%= @analytics.calculate_total(event: 'send') %></p>
 <p>Total number of emails opened is: <%= @analytics.calculate_total(event: 'open') %></p>
 <p>Total number of emails clicked is: <%= @analytics.calculate_total(event: 'click') %></p>
 <br>
+<h1>Event Rates</h1>
 <% for email_type in @analytics.email_types %>
   <p>Open rate for <%= email_type %> emails is <%= @analytics.calculate_rate(email_type: email_type, event: 'open')  %>%</p>
   <p>Click rate for <%= email_type %> emails is <%= @analytics.calculate_rate(email_type: email_type, event: 'click')  %>%</p>
-  <br>
+  <hr>
 <% end %>

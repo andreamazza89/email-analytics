@@ -14,6 +14,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'capybara'
   gem 'byebug', platform: :mri
+  gem 'coveralls', require: false
 end
 
 group :development do
