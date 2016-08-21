@@ -23,3 +23,7 @@ The application currently renders a static view that displays information as per
 Another point on efficiency; the application currently processes email data to generate analytics on demand, i.e. whenever a client requests the analytics page. With a rapidly increasing amount of data persisted, the computation/db access time will also increase, with a negative impact on server response time. A solution for this could be to introduce memoization: the analytics data could be cached and updated every time a new email event is received (or, even better, less often), which will make it readily available when required. This would trade-off memory for speed, and has the side-effect of potentially reducing the amount of processor cycles required. An example scenario for this would be when the analytics data is calculated+cached once a day but accessed more than once.  
 
 With regards to security, the application currently allows any client to post data to the */email_event* route without authentication. This is because the server posting data currently used does not support authentication. However, using a real-world service such as Mandrill would make authentication possible. There is also a Mandrill gem that would allow easy integration.
+
+A small note on the precision of the figures presented: the current implementation 
+rounds figures to the nearest unit. This is arbitrary and can be easily modified 
+if required.
