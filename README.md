@@ -13,7 +13,7 @@ some analytics on the data.
 - Visit *hostaddress*/analytics
 
 ### Domain modelling
-The current domain model can be found in the docs directory.
+A description of the current domain model can be found [here](https://github.com/andreamazza89/email-analytics/blob/master/docs/domain-model.md).
 
 ### Rationale/improvements
 
