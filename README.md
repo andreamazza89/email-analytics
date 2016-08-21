@@ -7,6 +7,7 @@ some analytics on the data.
 - Install ruby with [rvm](https://rvm.io/rvm/install), then install [bundler](http://bundler.io/)
 - Clone this repo and move into it ```git clone https://github.com/andreamazza89/email-analytics && cd email-analytics```
 - Run bundler to install all dependencies ```bundle install```
+- Migrate the schema to the server ```bin/rake db:migrate```
 - Run all tests to check that everything is working ```rspec```
 - Make sure the webhook is setup to send data in the body of an HTTP POST request to *hostaddress*/email_events, formatted as follows: __*{"Address":"test@test.test","EmailType":"Welcome","Event":"send","Timestamp":1432820696}*__
 - Run the server ```bin/rails s```
