@@ -1,31 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/helpers/analytics_helper.rb": [
+      "/Users/Andrea/temp/email-analytics/app/helpers/analytics_helper.rb": [
         1,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/helpers/application_helper.rb": [
+      "/Users/Andrea/temp/email-analytics/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/helpers/email_events_helper.rb": [
+      "/Users/Andrea/temp/email-analytics/app/helpers/email_events_helper.rb": [
         1,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/controllers/analytics_controller.rb": [
+      "/Users/Andrea/temp/email-analytics/app/controllers/analytics_controller.rb": [
         1,
         1,
         8,
         null,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/controllers/application_controller.rb": [
+      "/Users/Andrea/temp/email-analytics/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/models/analytics.rb": [
+      "/Users/Andrea/temp/email-analytics/app/models/analytics.rb": [
         1,
         null,
         1,
@@ -48,7 +48,7 @@
         null,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/models/email_event.rb": [
+      "/Users/Andrea/temp/email-analytics/app/models/email_event.rb": [
         1,
         null,
         1,
@@ -61,12 +61,12 @@
         null,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/models/application_record.rb": [
+      "/Users/Andrea/temp/email-analytics/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/Andrea/Dropbox/Programming/repos/email-analytics/app/controllers/email_events_controller.rb": [
+      "/Users/Andrea/temp/email-analytics/app/controllers/email_events_controller.rb": [
         0,
         0,
         0,
@@ -80,6 +80,6 @@
         0
       ]
     },
-    "timestamp": 1471772168
+    "timestamp": 1471803825
   }
 }
