@@ -1,8 +1,8 @@
 # Domain model
 
-DIAGRAM GOES HEEEEERE
+![alt text](email-analytics_domain-model.jpeg)
 
-At this stage there are two main models: *EmailEvent* and *Analytics*.  
+At this stage there are two models: *EmailEvent* and *Analytics*.  
 The former is responsible for interacting with ActiveRecord, the latter for returning analytics on the data persisted by *EmailEvent*.
 
 ## CRC cards
